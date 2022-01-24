@@ -25,6 +25,17 @@ function HomePage(props){
     )
 }
 
+// export async function getServerSideProps(context){
+//     // can fetch data from an API or Database
+
+
+//     return {
+//         props: {
+//             meetups: dummy_meetups
+//         }
+//     }
+// }
+
 
 export async function getStaticProps(){
     //fetch data from an API or Database
@@ -33,7 +44,8 @@ export async function getStaticProps(){
     return{
         props: {
             meetups: dummy_meetups
-        }  
+        },
+        revalidate:1
     };
 }
 
